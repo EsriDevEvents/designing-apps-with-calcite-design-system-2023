@@ -11,8 +11,8 @@ body,
 /** Setting custom core Calcite theme variables for light (default) and dark modes */
 body {
   --calcite-ui-brand: #3fa659;
-  --calcite-ui-foreground-1: #f5fdf7;
-  --calcite-ui-foreground-2: #e1f2e6;
+  --calcite-ui-foreground-1: #f6fcf8;
+  --calcite-ui-foreground-2: #e7f2ea;
   --calcite-ui-foreground-3: #ddeee2;
   --calcite-ui-border-3: #d2dfd5;
 }
@@ -77,6 +77,7 @@ body.calcite-mode-dark calcite-modal {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+  padding: 0 0.5rem;
 }
 
 #chips calcite-chip {

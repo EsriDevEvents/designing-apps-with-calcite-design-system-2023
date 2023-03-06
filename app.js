@@ -117,7 +117,7 @@ require([
     /** Assign a selector to style uniquely */
     /** Add event listeners to filter on after interaction */
     function createFilterChips() {
-      allTypes.map((item) => {
+      allTypes.forEach((item) => {
         const chip = document.createElement("calcite-chip");
         const simpleName = item.split(" ")[0];
         const isActive = appState.types.includes(item);
@@ -150,7 +150,7 @@ require([
       let args = [];
       const typesActive = appState.types.length > 0;
       const featureTypes = typesActive ? appState.types : allTypes;
-      featureTypes.map((j) => args.push(`'${j}'`));
+      featureTypes.forEach((j) => args.push(`'${j}'`));
       const filtered = ` AND (FEATTYPE = ${args.join(" OR FEATTYPE = ")})`;
       const unfiltered = ` AND FEATTYPE != ${args.join(" AND FEATTYPE != ")}`;
       const argString = typesActive ? filtered : unfiltered;
