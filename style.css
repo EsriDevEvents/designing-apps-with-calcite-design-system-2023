@@ -1,0 +1,91 @@
+html,
+body,
+#viewDiv {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  font-family: Roboto, system, sans-serif;
+}
+
+/** theming examples for core Calcite theme values */
+body.calcite-mode-dark {
+  --calcite-ui-brand: #3fa659;
+  --calcite-ui-brand-hover: #358c4b;
+  --calcite-ui-brand-press: #2c733e;
+  --calcite-ui-background: #303531;
+  --calcite-ui-foreground-1: #1e2520;
+  --calcite-ui-info: #49bf67;
+  --calcite-ui-text-1: #ffffff;
+  --calcite-ui-text-2: #b1bab3;
+  --calcite-ui-text-3: #8a9c8c;
+  --calcite-ui-text-inverse: #07100a;
+  --calcite-ui-border-1: #48554b;
+  --calcite-ui-border-2: #434a44;
+  --calcite-ui-border-3: #334036;
+  --calcite-ui-border-input: #4a5d4e;
+}
+
+/** theming examples for Calcite Chip with programmatically assigned classes */
+/** these values match the colors assigned in `app.js` */
+#chip-type-national {
+  --calcite-ui-icon-color: #c66a4a;
+}
+#chip-type-national.chip-active {
+  --calcite-ui-foreground-2: rgba(198, 106, 74, 0.3);
+}
+#chip-type-regional {
+  --calcite-ui-icon-color: #3cccb4;
+}
+#chip-type-regional.chip-active {
+  --calcite-ui-foreground-2: rgba(60, 204, 180, 0.3);
+}
+#chip-type-state {
+  --calcite-ui-icon-color: #7a81ff;
+}
+#chip-type-state.chip-active {
+  --calcite-ui-foreground-2: rgba(122, 129, 255, 0.3);
+}
+#chip-type-county {
+  --calcite-ui-icon-color: #0096ff;
+}
+#chip-type-county.chip-active {
+  --calcite-ui-foreground-2: rgba(0, 150, 255, 0.3);
+}
+#chip-type-local {
+  --calcite-ui-icon-color: #f260a1;
+}
+#chip-type-local.chip-active {
+  --calcite-ui-foreground-2: rgba(242, 95, 161, 0.3);
+}
+
+/** supporting styles */
+#nav {
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--calcite-ui-border-3);
+}
+
+#nav h1 {
+  font-size: 1rem;
+  margin-inline: 1rem auto;
+  color: var(--calcite-ui-text-2);
+}
+
+#chips {
+  margin-inline-end: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+#chips calcite-chip {
+  cursor: pointer;
+}
+
+#modal hr {
+  margin: 1rem 0;
+  border: 0;
+  border-bottom: 1px solid var(--calcite-ui-border-3);
+}

@@ -1,0 +1,70 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>2023 Esri Developer Summit - Designing Apps with Calcite Design System</title>
+
+    <!-- Calcite imports -->
+    <script type="module" src="https://js.arcgis.com/calcite-components/1.0.7/calcite.esm.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://js.arcgis.com/calcite-components/1.0.7/calcite.css" />
+
+    <!-- ArcGIS Maps SDK for JavaScript imports -->
+    <script src="https://js.arcgis.com/4.27/"></script>
+    <link id="jsapi-mode-light" rel="stylesheet"
+        href="https://js.arcgis.com/4.27/@arcgis/core/assets/esri/themes/light/main.css">
+    <link disabled id="jsapi-mode-dark" rel="stylesheet" href="https://js.arcgis.com/4.27/esri/themes/dark/main.css" />
+
+    <!-- Demo imports -->
+    <script src="/app.js" defer></script>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <calcite-shell>
+        <div id="viewDiv"></div>
+        <div id="nav" slot="header">
+            <img id="logo" src="/images/logo.svg" />
+            <h1>US Park Finder</h1>
+            <div id="chips">
+                <calcite-chip tabindex="0" icon="question" id="chip-info-toggle" value="Instructions"></calcite-chip>
+            </div>
+            <calcite-action-pad layout="horizontal" expand-disabled>
+                <calcite-action id="toggle-mode" text="Change mode" text-enabled icon="brightness"></calcite-action>
+                <calcite-action id="toggle-modal" text="About this application" icon="information"></calcite-action>
+            </calcite-action-pad>
+            <calcite-tooltip placement="bottom" reference-element="chip-info-toggle">Use the filters to show or hide
+                park
+                jurisdictions.</calcite-tooltip>
+            <calcite-tooltip placement="bottom" reference-element="toggle-mode">Change mode</calcite-tooltip>
+            <calcite-tooltip placement="bottom" reference-element="toggle-modal">About this
+                application</calcite-tooltip>
+        </div>
+    </calcite-shell>
+
+    <calcite-modal id="modal">
+        <div slot="header">Hello visitor!</div>
+        <div slot="content">
+            This simple sample application is a companion resource to the "Designing Apps with
+            Calcite Design System" technical session at Esri Developer Summit 2023.
+            <hr />
+            This example illustrates theming Calcite Components - learn more <calcite-link target="_blank"
+                href="https://developers.arcgis.com/calcite-design-system">
+                in Calcite Design System documentation</calcite-link>.
+            <hr />
+            <calcite-link target="_blank"
+                href="https://github.com/EsriDevEvents/designing-apps-with-calcite-design-system-2023">Application
+                source code</calcite-link> is available at
+            <calcite-link target="_blank" href="https://github.com/EsriDevEvents/">Esri Developer Events
+                GitHub</calcite-link>.
+            <hr />
+            <calcite-link target="_blank"
+                href="https://www.arcgis.com/home/item.html?id=f092c20803a047cba81fbf1e30eff0b5">USA
+                Parks data</calcite-link> is sourced from Esri Data and Maps, and available in the
+            <calcite-link target="_blank" href="https://livingatlas.arcgis.com/en/home/">ArcGIS Living Atlas of the
+                World</calcite-link>.
+        </div>
+    </calcite-modal>
+</body>
+
+</html>
