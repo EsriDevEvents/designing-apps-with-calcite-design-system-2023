@@ -9,51 +9,75 @@ body,
 }
 
 /** theming examples for core Calcite theme values */
+body {
+  --calcite-ui-brand: #3fa659;
+  --calcite-ui-foreground-1: #f5fdf7;
+  --calcite-ui-foreground-2: #e1f2e6;
+  --calcite-ui-foreground-3: #ddeee2;
+  --calcite-ui-border-3: #b2ceb8;
+}
+
 body.calcite-mode-dark {
   --calcite-ui-brand: #3fa659;
-  --calcite-ui-brand-hover: #358c4b;
-  --calcite-ui-brand-press: #2c733e;
-  --calcite-ui-background: #303531;
   --calcite-ui-foreground-1: #1e2520;
-  --calcite-ui-info: #49bf67;
-  --calcite-ui-text-1: #ffffff;
-  --calcite-ui-text-2: #b1bab3;
-  --calcite-ui-text-3: #8a9c8c;
-  --calcite-ui-text-inverse: #07100a;
-  --calcite-ui-border-1: #48554b;
-  --calcite-ui-border-2: #434a44;
+  --calcite-ui-foreground-2: #1b231d;
+  --calcite-ui-foreground-3: #1b231e;
   --calcite-ui-border-3: #334036;
-  --calcite-ui-border-input: #4a5d4e;
+}
+
+#chips {
+  margin-inline-end: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+#chips calcite-chip {
+  cursor: pointer;
+}
+
+#chips calcite-chip:focus {
+  outline-style: solid;
+  outline-width: 2px;
+}
+
+#chip-info-toggle {
+  outline-color: var(--calcite-ui-brand);
 }
 
 /** theming examples for Calcite Chip with programmatically assigned classes */
 /** these values match the colors assigned in `app.js` */
 #chip-type-national {
   --calcite-ui-icon-color: #c66a4a;
+  outline-color: #c66a4a;
 }
 #chip-type-national.chip-active {
   --calcite-ui-foreground-2: rgba(198, 106, 74, 0.3);
 }
 #chip-type-regional {
   --calcite-ui-icon-color: #3cccb4;
+  outline-color: #3cccb4;
 }
 #chip-type-regional.chip-active {
   --calcite-ui-foreground-2: rgba(60, 204, 180, 0.3);
 }
 #chip-type-state {
   --calcite-ui-icon-color: #7a81ff;
+  outline-color: #7a81ff;
 }
 #chip-type-state.chip-active {
   --calcite-ui-foreground-2: rgba(122, 129, 255, 0.3);
 }
 #chip-type-county {
   --calcite-ui-icon-color: #0096ff;
+  outline-color: #0096ff;
 }
 #chip-type-county.chip-active {
   --calcite-ui-foreground-2: rgba(0, 150, 255, 0.3);
 }
 #chip-type-local {
   --calcite-ui-icon-color: #f260a1;
+  outline-color: #f260a1;
 }
 #chip-type-local.chip-active {
   --calcite-ui-foreground-2: rgba(242, 95, 161, 0.3);
@@ -73,19 +97,12 @@ body.calcite-mode-dark {
   color: var(--calcite-ui-text-2);
 }
 
-#chips {
-  margin-inline-end: auto;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-#chips calcite-chip {
-  cursor: pointer;
-}
-
 #modal hr {
   margin: 1rem 0;
   border: 0;
   border-bottom: 1px solid var(--calcite-ui-border-3);
+}
+
+#modal ul li {
+  margin-bottom: 0.5rem;
 }
