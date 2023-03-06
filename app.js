@@ -110,9 +110,8 @@ require([
     const locateBtn = new Locate({ view: view });
     const homeWidget = new Home({ view: view });
 
-    view.ui.add(homeWidget, "top-right");
-    view.ui.move("zoom", "top-right");
-    view.ui.add(locateBtn, { position: "top-right" });
+    view.ui.add(homeWidget, "top-left");
+    view.ui.add(locateBtn, { position: "top-left" });
 
     /** Create the chips to represent each jurisdiction */
     /** Assign a selector to style uniquely */

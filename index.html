@@ -31,7 +31,8 @@
             </div>
             <calcite-action-pad layout="horizontal" expand-disabled>
                 <calcite-action id="toggle-mode" text="Change mode" text-enabled icon="brightness"></calcite-action>
-                <calcite-action id="toggle-modal" text="About this application" icon="information"></calcite-action>
+                <calcite-action id="toggle-modal" text="About this application" icon="information"
+                    close-on-click></calcite-action>
             </calcite-action-pad>
             <calcite-tooltip placement="bottom" reference-element="chip-info-toggle">Use the filters to show or hide
                 park
@@ -43,11 +44,13 @@
     </calcite-shell>
 
     <calcite-modal id="modal">
-        <div slot="header">Hello visitor!</div>
+        <div slot="header">About this application</div>
         <div slot="content">
-            This simple sample application is a companion resource to the "Designing Apps with
-            Calcite Design System" technical session at Esri Developer Summit 2023.
-            <hr />
+            <calcite-notice open>
+                <span slot="title">This demonstration application is a companion resource to the "Designing Apps with
+                    Calcite Design System" technical session at Esri Developer Summit 2023.
+                </span>
+            </calcite-notice>
             This example illustrates theming Calcite Components:
             <ul>
                 <li>The default Calcite theme variables for both light and dark modes are customized.</li>

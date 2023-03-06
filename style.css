@@ -5,48 +5,36 @@ body,
   margin: 0;
   height: 100%;
   width: 100%;
-  font-family: Roboto, system, sans-serif;
+  font-family: system-ui, sans-serif;
 }
 
-/** theming examples for core Calcite theme values */
+/** Setting custom core Calcite theme variables for light (default) and dark modes */
 body {
   --calcite-ui-brand: #3fa659;
   --calcite-ui-foreground-1: #f5fdf7;
   --calcite-ui-foreground-2: #e1f2e6;
   --calcite-ui-foreground-3: #ddeee2;
-  --calcite-ui-border-3: #b2ceb8;
+  --calcite-ui-border-3: #d2dfd5;
 }
 
 body.calcite-mode-dark {
   --calcite-ui-brand: #3fa659;
   --calcite-ui-foreground-1: #1e2520;
-  --calcite-ui-foreground-2: #1b231d;
+  --calcite-ui-foreground-2: #28312a;
   --calcite-ui-foreground-3: #1b231e;
   --calcite-ui-border-3: #334036;
 }
 
-#chips {
-  margin-inline-end: auto;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+/** Setting component-specific css variables for light (default) and dark modes **/
+calcite-modal {
+  --calcite-modal-scrim-background: rgba(30, 88, 48, 0.9);
 }
 
-#chips calcite-chip {
-  cursor: pointer;
+body.calcite-mode-dark calcite-modal {
+  --calcite-modal-scrim-background: rgba(51, 64, 54, 0.9);
 }
 
-#chips calcite-chip:focus {
-  outline-style: solid;
-  outline-width: 2px;
-}
-
-#chip-info-toggle {
-  outline-color: var(--calcite-ui-brand);
-}
-
-/** theming examples for Calcite Chip with programmatically assigned classes */
-/** these values match the colors assigned in `app.js` */
+/** Setting component-specific custom core Calcite theme variables */
 #chip-type-national {
   --calcite-ui-icon-color: #c66a4a;
   outline-color: #c66a4a;
@@ -84,6 +72,26 @@ body.calcite-mode-dark {
 }
 
 /** supporting styles */
+#chips {
+  margin-inline-end: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+#chips calcite-chip {
+  cursor: pointer;
+}
+
+#chips calcite-chip:focus {
+  outline-style: solid;
+  outline-width: 2px;
+}
+
+#chip-info-toggle {
+  outline-color: var(--calcite-ui-brand);
+}
+
 #nav {
   padding: 0.5rem 1rem;
   display: flex;
@@ -105,4 +113,8 @@ body.calcite-mode-dark {
 
 #modal ul li {
   margin-bottom: 0.5rem;
+}
+
+#modal calcite-notice {
+  margin-bottom: 1.25rem;
 }
