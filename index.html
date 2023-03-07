@@ -24,21 +24,19 @@
     <calcite-shell>
         <div id="viewDiv"></div>
         <div id="nav" slot="header">
-            <img id="logo" src="./images/logo.svg" />
+            <img id="logo" src="./images/logo.svg" alt="Application logo" />
             <h1>US Park Finder</h1>
             <div id="chips">
-                <calcite-chip tabindex="0" icon="question" id="chip-info-toggle" value="Instructions"></calcite-chip>
+                <calcite-chip tabindex="0" icon="question" id="toggle-instructions" value="Instructions"></calcite-chip>
             </div>
             <calcite-action-pad layout="horizontal" expand-disabled>
                 <calcite-action id="toggle-mode" text="Change mode" text-enabled icon="brightness"></calcite-action>
-                <calcite-action id="toggle-modal" text="About this application" icon="information"
-                    close-on-click></calcite-action>
+                <calcite-action id="toggle-modal" text="About this application" icon="information"></calcite-action>
             </calcite-action-pad>
-            <calcite-tooltip placement="bottom" reference-element="chip-info-toggle">Use the filters to show or hide
-                park
-                jurisdictions.</calcite-tooltip>
+            <calcite-tooltip placement="bottom" reference-element="toggle-instructions">Use the filters to show or hide
+                park jurisdictions.</calcite-tooltip>
             <calcite-tooltip placement="bottom" reference-element="toggle-mode">Change mode</calcite-tooltip>
-            <calcite-tooltip placement="bottom" reference-element="toggle-modal">About this
+            <calcite-tooltip placement="bottom" reference-element="toggle-modal" close-on-click>About this
                 application</calcite-tooltip>
         </div>
     </calcite-shell>
@@ -58,7 +56,6 @@
                 <li>The default Calcite theme variables for both light and dark modes are customized.</li>
                 <li>Calcite Chip components are themed programmatically and correspond to attribute values.</li>
                 <li>Calcite Modal components override component-specific variables for scrim.</li>
-
             </ul>
             <calcite-link target="_blank"
                 href="https://developers.arcgis.com/calcite-design-system/foundations/colors/#theming">
