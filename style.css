@@ -115,6 +115,10 @@ body.calcite-mode-dark calcite-modal {
   color: var(--calcite-ui-text-2);
 }
 
+#nav calcite-tooltip {
+  z-index: 100;
+}
+
 #modal hr {
   margin: 1rem 0;
   border: 0;
