@@ -39,34 +39,43 @@ body.calcite-mode-dark calcite-modal {
   --calcite-ui-icon-color: #c66a4a;
   outline-color: #c66a4a;
 }
+
 #chip-type-national.chip-active {
   --calcite-ui-foreground-2: rgba(198, 106, 74, 0.3);
 }
+
 #chip-type-regional {
   --calcite-ui-icon-color: #3cccb4;
   outline-color: #3cccb4;
 }
+
 #chip-type-regional.chip-active {
   --calcite-ui-foreground-2: rgba(60, 204, 180, 0.3);
 }
+
 #chip-type-state {
   --calcite-ui-icon-color: #7a81ff;
   outline-color: #7a81ff;
 }
+
 #chip-type-state.chip-active {
   --calcite-ui-foreground-2: rgba(122, 129, 255, 0.3);
 }
+
 #chip-type-county {
   --calcite-ui-icon-color: #0096ff;
   outline-color: #0096ff;
 }
+
 #chip-type-county.chip-active {
   --calcite-ui-foreground-2: rgba(0, 150, 255, 0.3);
 }
+
 #chip-type-local {
   --calcite-ui-icon-color: #f260a1;
   outline-color: #f260a1;
 }
+
 #chip-type-local.chip-active {
   --calcite-ui-foreground-2: rgba(242, 95, 161, 0.3);
 }

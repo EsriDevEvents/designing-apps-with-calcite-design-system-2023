@@ -5,6 +5,7 @@ const allTypes = [
   "County park",
   "Local park",
 ];
+
 const colors = ["#c66a4a", "#7a81ff", "#3cccb4", "#0096ff", "#f260a1"];
 
 const appState = {
