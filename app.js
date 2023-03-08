@@ -1,3 +1,4 @@
+/** Declare element variables */
 const toggleModeEl = document.getElementById("toggle-mode");
 const toggleModalEl = document.getElementById("toggle-modal");
 const modalEl = document.getElementById("modal");
@@ -5,6 +6,7 @@ const chipsEl = document.getElementById("chips");
 const darkModeCss = document.getElementById("jsapi-mode-dark");
 const lightModeCss = document.getElementById("jsapi-mode-light");
 
+/** Declare expected type values */
 const allTypes = [
   "National park or forest",
   "State park or forest",
@@ -13,34 +15,16 @@ const allTypes = [
   "Local park",
 ];
 
+/** Declare  colors to assign to each type - these will also be used in CSS */
 const typeColors = ["#c66a4a", "#7a81ff", "#3cccb4", "#0096ff", "#f260a1"];
 
+/** Create a simple state object and set the default filter to allTypes */
 const appState = {
   types: allTypes,
   mode: "light",
 };
 
-const renderer = {
-  type: "unique-value",
-  field: "FEATTYPE",
-  uniqueValueInfos: assignColorsToTypes(),
-};
-
-function assignColorsToTypes() {
-  let uniqueValueInfos = [];
-  allTypes.forEach((type, index) => {
-    uniqueValueInfos.push({
-      value: type,
-      symbol: {
-        type: "simple-fill",
-        color: typeColors[index],
-        outline: { color: typeColors[index] },
-      },
-    });
-  });
-  return uniqueValueInfos;
-}
-
+/** Maps SDK */
 require([
   "esri/Map",
   "esri/views/MapView",
@@ -55,10 +39,14 @@ require([
     const layer = new FeatureLayer({
       url: "https://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/USA_Parks/FeatureServer/0",
       outFields: ["*"],
-      renderer: renderer,
       popupTemplate: createPopupTemplate(),
       minScale: 0,
       maxScale: 0,
+      renderer: {
+        type: "unique-value",
+        field: "FEATTYPE",
+        uniqueValueInfos: assignColorsToTypes(),
+      },
     });
 
     const map = new Map({
@@ -90,6 +78,22 @@ require([
         title: "{NAME}",
         content: "{SQMI} square miles, jurisdiction: {FEATTYPE}",
       };
+    }
+
+    /** Assign the color values to expected type values */
+    function assignColorsToTypes() {
+      let uniqueValueInfos = [];
+      allTypes.forEach((type, index) => {
+        uniqueValueInfos.push({
+          value: type,
+          symbol: {
+            type: "simple-fill",
+            color: typeColors[index],
+            outline: { color: typeColors[index] },
+          },
+        });
+      });
+      return uniqueValueInfos;
     }
 
     /** Create the chips to represent each jurisdiction */
