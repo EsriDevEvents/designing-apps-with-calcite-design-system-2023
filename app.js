@@ -2,7 +2,7 @@
 const toggleModeEl = document.getElementById("toggle-mode");
 const toggleModalEl = document.getElementById("toggle-modal");
 const modalEl = document.getElementById("modal");
-const chipsEl = document.getElementById("chips");
+const chipGroupEl = document.getElementById("chips");
 const darkModeCss = document.getElementById("jsapi-mode-dark");
 const lightModeCss = document.getElementById("jsapi-mode-light");
 
@@ -35,6 +35,9 @@ require([
   (async () => {
     toggleModeEl.addEventListener("click", () => handleModeChange());
     toggleModalEl.addEventListener("click", () => handleModalChange());
+    chipGroupEl.addEventListener("calciteChipGroupSelect", (event) =>
+      handleChipChange(event)
+    );
 
     const layer = new FeatureLayer({
       url: "https://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/USA_Parks/FeatureServer/0",
@@ -101,22 +104,11 @@ require([
       allTypes.forEach((item) => {
         const chip = document.createElement("calcite-chip");
         const simpleName = item.split(" ")[0];
-        const isActive = appState.types.includes(item);
-        chip.tabIndex = 0;
         chip.innerText = simpleName;
-        chip.value = simpleName;
+        chip.value = item;
+        chip.selected = true;
         chip.id = `chip-type-${simpleName.toLowerCase()}`;
-        chip.icon = isActive ? "check-circle-f" : "circle";
-        chip.classList = isActive ? "chip-active" : undefined;
-        chip.addEventListener("click", (event) =>
-          handleChipChange(event, item)
-        );
-        chip.addEventListener("keydown", (event) => {
-          if (event.key === " " || event.key === "Enter") {
-            handleChipChange(event, item);
-          }
-        });
-        chipsEl.appendChild(chip);
+        chipGroupEl.appendChild(chip);
       });
     }
 
@@ -142,16 +134,9 @@ require([
       });
     }
 
-    function handleChipChange(event, value) {
-      let items = appState.types;
-      const isActive = !items.includes(value);
-      event.target.icon = isActive ? "check-circle-f" : "circle";
-      event.target.classList = isActive ? "chip-active" : undefined;
-      if (isActive) {
-        items.push(value);
-      } else {
-        items = items.filter((item) => item !== value);
-      }
+    function handleChipChange(event) {
+      let items = [];
+      event.target.selectedItems.forEach((item) => items.push(item.value));
       appState.types = items;
       handleLayerFilter();
     }

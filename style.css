@@ -5,7 +5,6 @@ body,
   margin: 0;
   height: 100%;
   width: 100%;
-  font-family: system-ui, sans-serif;
 }
 
 /** Setting custom core Calcite theme variables for light (default) and dark modes */
@@ -37,69 +36,53 @@ body.calcite-mode-dark calcite-modal {
 /** Setting component-specific custom core Calcite theme variables */
 #chip-type-national {
   --calcite-ui-icon-color: #c66a4a;
-  outline-color: #c66a4a;
+  --calcite-ui-brand: #c66a4a;
 }
 
-#chip-type-national.chip-active {
+#chip-type-national[selected] {
   --calcite-ui-foreground-2: rgba(198, 106, 74, 0.3);
 }
 
 #chip-type-regional {
   --calcite-ui-icon-color: #3cccb4;
-  outline-color: #3cccb4;
+  --calcite-ui-brand: #3cccb4;
 }
 
-#chip-type-regional.chip-active {
+#chip-type-regional[selected] {
   --calcite-ui-foreground-2: rgba(60, 204, 180, 0.3);
 }
 
 #chip-type-state {
   --calcite-ui-icon-color: #7a81ff;
-  outline-color: #7a81ff;
+  --calcite-ui-brand: #7a81ff;
 }
 
-#chip-type-state.chip-active {
+#chip-type-state[selected] {
   --calcite-ui-foreground-2: rgba(122, 129, 255, 0.3);
 }
 
 #chip-type-county {
   --calcite-ui-icon-color: #0096ff;
-  outline-color: #0096ff;
+  --calcite-ui-brand: #0096ff;
 }
 
-#chip-type-county.chip-active {
+#chip-type-county[selected] {
   --calcite-ui-foreground-2: rgba(0, 150, 255, 0.3);
 }
 
 #chip-type-local {
   --calcite-ui-icon-color: #f260a1;
-  outline-color: #f260a1;
+  --calcite-ui-brand: #f260a1;
 }
 
-#chip-type-local.chip-active {
+#chip-type-local[selected] {
   --calcite-ui-foreground-2: rgba(242, 95, 161, 0.3);
 }
 
 /** supporting styles */
 #chips {
   margin-inline-end: auto;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  padding: 0 0.5rem;
-}
-
-#chips calcite-chip {
-  cursor: pointer;
-}
-
-#chips calcite-chip:focus {
-  outline-style: solid;
-  outline-width: 2px;
-}
-
-#chip-info-toggle {
-  outline-color: var(--calcite-ui-brand);
+  margin-inline-start: 0.5rem;
 }
 
 #nav {
