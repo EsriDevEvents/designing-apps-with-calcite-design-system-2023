@@ -6,8 +6,8 @@
     <title>2023 Esri Developer Summit - Designing Apps with Calcite Design System</title>
 
     <!-- Calcite imports -->
-    <script type="module" src="https://js.arcgis.com/calcite-components/1.3.1/calcite.esm.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://js.arcgis.com/calcite-components/1.3.1/calcite.css" />
+    <script type="module" src="https://js.arcgis.com/calcite-components/1.4.1/calcite.esm.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://js.arcgis.com/calcite-components/1.4.1/calcite.css" />
 
     <!-- ArcGIS Maps SDK for JavaScript imports -->
     <script src="https://js.arcgis.com/4.27/"></script>
@@ -23,21 +23,24 @@
 <body>
     <calcite-shell>
         <div id="viewDiv"></div>
-        <div id="nav" slot="header">
-            <img id="logo" src="./images/logo.svg" alt="Application logo" />
-            <h1>US Park Finder</h1>
-            <calcite-chip interactive icon="question" id="toggle-instructions" value="Instructions"></calcite-chip>
-            <calcite-chip-group id="chips" selection-mode="multiple"></calcite-chip-group>
-            <calcite-action-pad layout="horizontal" expand-disabled>
+        <calcite-navigation slot="header">
+            <calcite-navigation-logo href="/" thumbnail="./images/logo.svg" alt="Application logo" slot="logo"
+                heading="US Park Finder"></calcite-navigation-logo>
+            <calcite-action-pad layout="horizontal" expand-disabled slot="content-end">
+                <calcite-action id="toggle-instructions" text="Instructions" icon="lightbulb"></calcite-action>
                 <calcite-action id="toggle-mode" text="Change mode" text-enabled icon="brightness"></calcite-action>
                 <calcite-action id="toggle-modal" text="About this application" icon="information"></calcite-action>
             </calcite-action-pad>
-            <calcite-tooltip placement="bottom" reference-element="toggle-instructions">Use the filters to show or hide
-                park jurisdictions.</calcite-tooltip>
-            <calcite-tooltip placement="bottom" reference-element="toggle-mode">Change mode</calcite-tooltip>
-            <calcite-tooltip placement="bottom" reference-element="toggle-modal" close-on-click>About this
-                application</calcite-tooltip>
-        </div>
+            <calcite-tooltip placement="bottom" reference-element="toggle-instructions" slot="content-end">Use the
+                filters to show or hide park jurisdictions.</calcite-tooltip>
+            <calcite-tooltip placement="bottom" reference-element="toggle-mode" slot="content-end">Change
+                mode</calcite-tooltip>
+            <calcite-tooltip placement="bottom" reference-element="toggle-modal" close-on-click slot="content-end">About
+                this application</calcite-tooltip>
+            <calcite-navigation slot="navigation-secondary">
+                <calcite-chip-group id="chips" selection-mode="multiple" slot="content-center"></calcite-chip-group>
+            </calcite-navigation>
+        </calcite-navigation>
     </calcite-shell>
 
     <calcite-alert open icon="effects">
